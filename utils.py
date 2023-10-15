@@ -1,15 +1,17 @@
 import pandas as pd
 import numpy as np
-import math
+import readsheets
+
+dfs = readsheets.readsheets('files/test.xls')
 
 
-def get_top10_1():
-    df = pd.read_excel('files/test.xlsx')
+def getTop(n):
+    df = dfs[n]
+    # df = pd.read_excel('files/test.xlsx')
     gnmk = df["功能模块"][df['功能项'].isna()]
-    gnx = df["功能项"][df['功能模块'].isna()]
-    mknum = df["数量"][df["功能项"].isna()].astype(str)
-    xnum = df["数量"][df["功能模块"].isna()].astype(str)
+    gnmk = df["功能模块"][df['功能项'] == '']
+    gnx = df["功能项"][df['功能模块'] == '']
+    mknum = df["数量"][df["功能项"] == ''].astype(str)
+    xnum = df["数量"][df["功能模块"] == ''].astype(str)
     return np.array(gnmk), np.array(gnx), np.array(mknum), np.array(xnum)
 
-
-# print(get_top10_1())

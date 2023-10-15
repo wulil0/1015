@@ -8,14 +8,12 @@
     <link href="../static/css/main.css" rel="stylesheet" />
     <script src="../static/js/jquery.js"></script>
     <script src="../static/js/echarts.js"></script>
-    <script src="../static/js/main.js"></script>
-    <script src="../static/js/top10_1.js"></script>
+    <script defer src="../static/js/main.js"></script>
   </head>
   <body>
-    <div id="data-container">
-      <!-- 这里将显示从Flask获取的数据 -->
-    </div>
-    <div id="top10_1"></div>
-    <div id="top10_2"></div>
+
+    <div id="top10_1" class="col-3"></div>
+    <div id="top10_2" class="col-3"></div>
+    <select id="dropdown" onchange="getS()">
   </body>
 </html>

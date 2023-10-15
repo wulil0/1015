@@ -2,14 +2,12 @@
 
 $(document).ready(function () {
   $.ajax({
-    url: "/get_top10_1",
+    url: "/get_top10",
     type: "GET",
     success: function (response) {
       // console.log(response);
-      console.log(response);
       var data = JSON.parse(response[0]);
       var data2 = JSON.parse(response[1]);
-      // console.log(data);
       var gnmk = Object.keys(data);
       var gnx = Object.keys(data2);
       var mknum = Object.values(data);
